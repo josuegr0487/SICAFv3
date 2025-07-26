@@ -1,6 +1,5 @@
 import { Request, Response } from "express";
-// @ts-ignore
-import bcrypt from "bcryptjs";
+import * as bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import { Usuario } from "../models/usuario.model";
 

@@ -21,6 +21,8 @@ import metodoPagoRoutes from "./routes/metodopago.routes";
 import pagoRoutes from "./routes/pago.routes";
 import configuracionRoutes from "./routes/configuracion.routes";
 
+import { manejarErrores } from "./middlewares/error.middleware";
+
 // Inicializar app
 export const app = express();
 app.use(cors());
@@ -54,3 +56,5 @@ app.use("/api/venta-detalles", ventaDetalleRoutes);
 app.use("/api/metodos-pago", metodoPagoRoutes);
 app.use("/api/pagos", pagoRoutes);
 app.use("/api/configuraciones", configuracionRoutes);
+
+app.use(manejarErrores);
